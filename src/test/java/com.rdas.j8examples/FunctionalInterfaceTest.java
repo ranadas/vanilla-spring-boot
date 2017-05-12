@@ -3,8 +3,6 @@ package com.rdas.j8examples;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.function.Function;
-
 /**
  * Created by x148128 on 12/05/2017.
  */
