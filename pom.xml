@@ -19,6 +19,8 @@
     <properties>
         <jetty_version>9.4.5.v20170502</jetty_version>
         <tomcat.version>8.5.2</tomcat.version>
+        <jdk.version>1.8</jdk.version>
+        <junit.version>4.12</junit.version>
     </properties>
 
     <dependencies>
@@ -85,11 +87,27 @@
             <version>${tomcat.version}</version>
         </dependency>
         -->
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <!-- [4] -->
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
